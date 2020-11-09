@@ -19,6 +19,7 @@ switch (command) {
             const encoded = words.map(encodeWord);
             console.log(encoded.join(' '))
         } break;
+    
     case 'translate':
         const translation = words.map(translateWord);
         if (argv3 === undefined) {
@@ -26,6 +27,7 @@ switch (command) {
         } else {
             console.log(translation.join(' '));
         }
+    
     case 'search':
         if (argv3 === undefined) {
             console.log('Please enter a valid search term.');
@@ -35,41 +37,31 @@ switch (command) {
                 if (argv3 !== undefined) {
                     console.log(emoji.symbol);
                 }
+
             }
         }
         break;
+    
     case 'random':
         const randomNess = randomElement(emojis);
         if (argv3 === undefined) {
             console.log(randomNess.symbol);
         } else if (argv3 !== undefined) {
-            const matchCat = getCategory(argv3);
-            const catMatch = randomElement(matchCat);
+            const catMatch = randomElement(getCategory(argv3));
             console.log(catMatch.symbol);
         } else {
             console.log('That item is not known to our directories, please try a different item.')
         }
         break;
+    
     case 'madLibs':
         if (argv3 === undefined) {
             console.log('Add text to make a madLibs!')
-        }
-        const madness = words.map(madLibs);
-        console.log(madness.join(' '));
+        } else {
+            console.log(words.map(madLibs).join(' '));
+        };
         break;
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     default:
         console.log('Your choices for what to write after "node main.js" (and a space!) are.:');
         console.log('* "encode" followed by a space and then as many letters as you want.');
