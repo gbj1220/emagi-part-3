@@ -8,7 +8,7 @@ const emojis = [
         ],
     },
     {
-        symbol:'👶',
+        symbol: '👶',
         letter: 'b',
         name: 'baby',
         categories: [
@@ -16,7 +16,7 @@ const emojis = [
         ],
     },
     {
-        symbol:'🌵',
+        symbol: '🌵',
         letter: 'c',
         name: 'cactus',
         categories: [
@@ -587,7 +587,15 @@ const emojis = [
             'device',
         ],
     },
- ]
+    {
+        symbol: '🐱',
+        name: 'catFace',  
+        categories: [
+            'face',
+            'cat'
+        ]
+    }
+]
 
 
 module.exports = emojis;
